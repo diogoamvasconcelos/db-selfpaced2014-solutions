@@ -29,7 +29,8 @@ Your queries will run over a small data set conforming to the schema.
 	where exists (select * from Friend F where F.ID1 = Likes.ID1 and F.ID2 = Likes.ID2)
 	and not exists (select * from Likes L2 where L2.ID1 = Likes.ID2 and L2.ID2 = Likes.ID1);
 
-### Q3 - For all cases where A is friends with B, and B is friends with C, add a new friendship for the pair A and C. Do not add duplicate friendships, friendships that already exist, or friendships with oneself. (This one is a bit challenging; congratulations if you get it right.)
+### Q3 - For all cases where A is friends with B, and B is friends with C, add a new friendship for the pair A and C. Do not add duplicate friendships, friendships that already exist, or friendships with oneself.
+(This one is a bit challenging; congratulations if you get it right.)
 
 	insert into Friend
 	select distinct F1.ID1, F2.ID2
